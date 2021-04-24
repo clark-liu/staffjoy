@@ -45,6 +45,8 @@ public class ServiceHelper {
 
     private final EnvConfig envConfig;
 
+
+    //Async 不可以与调用方法存在于同一Bean内
     @Async(AppConfig.ASYNC_EXECUTOR_NAME)
     public void syncUserAsync(String userId) {
         if (envConfig.isDebug()) {
